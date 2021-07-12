@@ -29,7 +29,8 @@ file_paths %>%
         read_csv(path)
     })
 
-# versión Cindy
+# versión Cindy  ----
+# csv
 library(readr)
 tmp<-list()
 for (i in 1:13) {
@@ -39,4 +40,13 @@ for (i in 1:13) {
 total<-list.rbind(tmp_1)
 head(total)
 
+# excel
+library(readxl)
+tmp<-list()
+for (i in 1:46) {
+    tmp[[i]]<-read_excel(paste0("G:/Mi unidad/2020 SIC/Docs Coyuntura informe Super DANE/datos/precios_long/sem_",i,".xlsx"))
+}
+
+total<-list.rbind(tmp_1)
+head(total)
 
