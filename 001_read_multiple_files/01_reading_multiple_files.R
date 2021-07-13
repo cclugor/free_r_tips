@@ -32,6 +32,7 @@ file_paths %>%
 # versión Cindy  ----
 # csv
 library(readr)
+library(rlist)
 tmp<-list()
 for (i in 1:13) {
     tmp[[i]]<-read_csv(paste0("G:/Mi unidad/2021 SIC/0. Coyunturas/3. Abogacía SICOM/precios/precios (",i,").csv"))
@@ -42,11 +43,12 @@ head(total)
 
 # excel
 library(readxl)
+library(rlist)
 tmp<-list()
 for (i in 1:46) {
     tmp[[i]]<-read_excel(paste0("G:/Mi unidad/2020 SIC/Docs Coyuntura informe Super DANE/datos/precios_long/sem_",i,".xlsx"))
 }
 
-total<-list.rbind(tmp_1)
+total<-list.rbind(tmp)
 head(total)
 
