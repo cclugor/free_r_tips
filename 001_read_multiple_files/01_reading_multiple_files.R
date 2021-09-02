@@ -30,6 +30,10 @@ file_paths %>%
     })
 
 # versión Cindy  ----
+## para cualquiera de los casos es ideal que los archivos tengan el mismo tamaño
+## con el fin de que mediante argumentos de read_csv y read_excel se puedan 
+## mantener 
+
 # csv
 library(readr)
 library(rlist)
@@ -51,4 +55,11 @@ for (i in 1:46) {
 
 total<-list.rbind(tmp)
 head(total)
+
+
+# excel con nombres distintos
+
+files <- list.files(path="C:/Users/lugor/Downloads/Mayor/mar_2020/")
+tmp <- lapply(paste0("C:/Users/lugor/Downloads/Mayor/mar_2020/",files), read_excel, col_names = FALSE)
+length(files)
 
